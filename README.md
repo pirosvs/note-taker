@@ -1,6 +1,14 @@
 # note-taker
 
+## Deployment Link
+
+<a href="https://note-taker-darmstrong-72522.herokuapp.com/">Click here to access the note taker</a>
+
 ## Description
+
+<img src="./public/assets/images/saved-notes.png" alt="Example of the app showing the notepad and saved notes to the left" />
+<img src="./public/assets/images/notes3.png" alt="Example of a stored note redisplayed" /> 
+
 Purpose : 
 - simple app to allow user to take notes and look back on them
 - useful because it's easy to forget things and having a simple personal note taker makes things more private (which is valuable on the internet) and allows for a place to store info that is easy to keep track of
@@ -14,3 +22,4 @@ Credit to my housemate Lyra, without whom I would be doing infinitely worse in t
 This project falls under the MIT license.
 
 ## Author
+Damien Armstrong can be found on: <a href="https://www.linkedin.com/in/damien-armstrong-412319138/">Linkedin</a>, <a href="https://github.com/pirosvs">Github</a>
