@@ -9,11 +9,9 @@
 <img src="./public/assets/images/saved-notes.png" alt="Example of the app showing the notepad and saved notes to the left" />
 <img src="./public/assets/images/notes3.png" alt="Example of a stored note redisplayed" /> 
 
-Purpose : 
-- simple app to allow user to take notes and look back on them
-- useful because it's easy to forget things and having a simple personal note taker makes things more private (which is valuable on the internet) and allows for a place to store info that is easy to keep track of
+The purpose of this project is to create a simple app to allow the user to take notes and look back on them at any time. While it can be easy to forget something, this app allows the user to make a quick note that they can come back to to remember what they needed in one place, making it easier to keep track of thought snippets. 
 
-- uses get and post requests, fetch requests, etc
+By making use of get and post requests and saving our user input as json data, we are able to save users notes and keep them available. By assigning an individual id to each note, we are able to easily retrieve and display them.
 
 ## Credits
 Credit to my housemate Lyra, without whom I would be doing infinitely worse in this class and would have a far lesser understanding of the topics covered and used throughout our projects. Specifically to this project, credit to her for helping me orient myself, understand why the post requests are structured the way they are, and with the asynch.
