@@ -4,6 +4,12 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+// Math random for unique ids
+// module.exports = () =>
+//   Math.floor((1 + Math.random()) * 0x10000)
+//     .toString(16)
+//     .substring(1);
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -98,7 +104,10 @@ const handleNoteDelete = (e) => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
-  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  const rawNote = e.target.parentElement.getAttribute('data-note');
+  //console.info(rawNote)
+  activeNote = JSON.parse(rawNote);
+  console.info(activeNote);
   renderActiveNote();
 };
 
@@ -160,7 +169,8 @@ const renderNoteList = async (notes) => {
 
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
-    li.dataset.note = JSON.stringify(note);
+   // li.dataset.note = JSON.stringify(note);
+    li.setAttribute('data-note', JSON.stringify(note));
 
     noteListItems.push(li);
   });
