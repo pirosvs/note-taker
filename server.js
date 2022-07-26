@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-const dbPath = './db/db.json'
+const dbPath = './db/db.json';
 
 // Function to create a random id for each note
 function uuid()
@@ -29,11 +29,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'))
 });
 
+// Get Route for notes page
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-// GET Route for notes page
+// GET Route for api info
 app.get('/api/notes', (req, res) => {
   console.log("GET /api/notes");
   var dbObj = JSON.parse(fs.readFileSync(dbPath));
@@ -54,7 +55,7 @@ app.post('/api/notes', (req, res) => {
     // Destructuring assignment for the items in req.body
     const { title, text } = req.body;
   
-    // If all the required properties are present
+    // Check that both our info fields are filled 
     if (title && text) {
       // Variable for the object we will save
       const newNote = {
@@ -65,16 +66,16 @@ app.post('/api/notes', (req, res) => {
   
       if(fs.existsSync(dbPath))
       {
-        // open it
+        // Open the file
         var dbObj = JSON.parse(fs.readFileSync(dbPath));
 
-        // add our note to the array
+        // Add our note to the array
         dbObj.push(newNote)
 
-        // save the file
+        // Make our db info a string so we can save it
         const dbString = JSON.stringify(dbObj, null, '\t');
         
-        // Write the string to a file
+        // Save our entire json file
         fs.writeFile(dbPath, dbString, (err) =>
         err
         ? console.error(err)
@@ -84,12 +85,15 @@ app.post('/api/notes', (req, res) => {
         );
       }
       
+    // If our note successfully saves to our json file, set response status to success
       const response = {
         status: 'success'
       };
   
       console.log(response);
       res.json(response);
+
+    // If our note does not save, let us know there was in error
     } else {
       res.json('Error in logging note');
     }
