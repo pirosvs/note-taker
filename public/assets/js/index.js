@@ -4,12 +4,6 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-// Math random for unique ids
-// module.exports = () =>
-//   Math.floor((1 + Math.random()) * 0x10000)
-//     .toString(16)
-//     .substring(1);
-
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
